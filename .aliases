@@ -1,0 +1,7 @@
+alias c="clear"
+alias h="history"
+alias ll="ls -al"
+alias q="exit"
+alias gs="git status"
+alias gh="git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+alias update="brew update && brew upgrade && brew clean;"
