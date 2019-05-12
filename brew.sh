@@ -8,6 +8,7 @@ brew install gnupg
 brew install tmux
 brew install vim
 brew install p7zip
+brew install z
 
 # vim stuff
 brew install fzf fd
