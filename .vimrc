@@ -20,6 +20,12 @@ set autoindent
 " Make tabs as wide as two spaces
 set tabstop=2
 
+" Always use spaces instead of tab characters
+set expandtab
+
+" Size of an 'indent'
+set shiftwidth=2
+
 " Use visual bell instead of beeping when doing something wrong
 set visualbell
 
@@ -58,3 +64,15 @@ let g:lightline = {
 
 " The default of 31 is just a little too narrow
 let g:NERDTreeWinSize=40
+
+let g:ale_fixers = {
+       \ 'javascript': ['prettier'],
+       \ 'css': ['prettier'],
+       \ }
+
+let g:ale_linters = {
+       \ 'javascript': ['eslint'],
+       \ }
+
+let g:ale_linters_explicit = 1
+"let g:ale_fix_on_save = 1
