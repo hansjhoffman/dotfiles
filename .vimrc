@@ -20,7 +20,7 @@ set autoindent
 " Make tabs as wide as two spaces
 set tabstop=2
 
-" Always use spaces instead of tab characters
+" Always use spaces instead of tab characters 
 set expandtab
 
 " Size of an 'indent'
@@ -41,17 +41,8 @@ set laststatus=2
 " Do not show mode because lightline plugin will handle this
 set noshowmode
 
-" Load plugins
-so ~/.vim/plugins.vim
-
-" Use fzf instead of default find
-set rtp+=/usr/local/opt/fzf
-
 " Highlight current line
 set cursorline
-
-" '\nt' shortcut to toggle rather than typing :NERDTree everytime
-nmap <leader>nt :NERDTreeToggle<cr>
 
 " Config for lightline plugin
 if !has('gui_running')
@@ -67,21 +58,13 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+" Use fzf instead of default find
+set rtp+=/usr/local/opt/fzf
 
-" The default of 31 is just a little too narrow
-let g:NERDTreeWinSize=40
+" Load plugins
+so ~/.vim/plugins.vim
 
-let g:ale_fixers = {
-       \ 'javascript': ['prettier'],
-       \ 'css': ['prettier'],
-       \ }
-
-let g:ale_linters = {
-       \ 'javascript': ['eslint'],
-       \ }
-
-let g:ale_linters_explicit = 1
-"let g:ale_fix_on_save = 1
+" Load custom settings for plugins
+so ~/.vim/settings/ale.vim
+so ~/.vim/settings/nerdtree.vim
+so ~/.vim/settings/lightline.vim
